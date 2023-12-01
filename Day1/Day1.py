@@ -5,11 +5,16 @@ with open('input.txt', 'r') as file:
 
 
 def part_one(data:list, result: int = 0) -> int:
+    pattern = r'[A-z]'
+    pattern_compiled = re.compile(pattern)
     for line in data:
-        new_line: str = re.sub(r'[A-z]', '', line)
+        new_line: str = pattern_compiled.sub('', line)
         number_found: str = new_line[0] + new_line[-1]
         result += int(number_found)
     return result
+
+
+print('part 1:', part_one(data))
 
 
 digit_dict = {"one": "o1e",
@@ -30,4 +35,4 @@ for key, value in digit_dict.items():
 
 text_in_line = text.splitlines()
 
-print(part_one(text_in_line))
+print('part 2:', part_one(text_in_line))
