@@ -35,6 +35,6 @@ for key, value in digit_dict.items():
 
 text_in_line = text.splitlines()
 
-f.close()
-
 print('part 2:', part_one(text_in_line))
+
+f.close()
